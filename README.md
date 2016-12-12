@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+xavierapp is my first web app, please find below the instructions to get it up and runnning.
 
 Things you may want to cover:
 
