@@ -1,17 +1,25 @@
 /*Index CSS*/
 
-* { box-sizing: border-box; }
+* { 
+	box-sizing: border-box;
+	margin 0;
+}
+
+html {
+	height: 100%;
+}
 
 body {
 	background: url("../img/free-stock-photos-002.jpg");
 	background-size: auto;
 	position: relative;
+	height: 100%;
 }
 
 /*Navbar*/
 
 .navbar {
-	background: linear-gradient(145deg, transparent, #434649);
+	background: linear-gradient(145deg, transparent, black);
 	position: fixed;
 	width: 100%;
 	height: 80px;
@@ -92,20 +100,19 @@ body {
 
 .container {
 	background: url("../img/free-stock-photos-002.jpg");
-	min-height: 800px;
-	width: 100%;
+	width: 80%;
 	background-size: cover;
-  margin: 0 auto;
+  margin-top: 0px;
 }
 
 .header {
   text-align: center;
 }
 
-#content {
-	width: 80%;
+.content-container {
+	width: 100%;
 	margin: 0 auto;
-  padding-top: 80px;
+  margin-top: 90px;
 }
 
 @media (max-width: 767px) {
@@ -135,24 +142,24 @@ body {
 
 /* Home */
 
-.home-container {
-	width: 80%;
-  margin: 0 auto;
+.carousel-container {
+	width: 100%;
+  justify-content: center;
+  margin-top: 90px;
+}
+
+@media (max-width: 767px) {
+	.carousel-container {
+		margin-top: 10px;
+	}
 }
 
 /* Customized Carousel */
 
 .carousel {
+	margin: auto;
   max-height: 400px;
-  max-width: 1920px;
-  margin-top: 90px;
-  margin-bottom: 0px;
-}
-
-@media (max-width: 767px) {
-	.carousel {
-		margin-top: 10px;
-	}
+  max-width: 1024px;
 }
 
 .carousel-caption {
@@ -174,10 +181,6 @@ body {
   opacity: 1;
 }
 
-#me {
-
-}
-
 .carousel h3 {
 	color: white;
 	font-size: 30px;
@@ -190,12 +193,6 @@ body {
 
 .carousel a:hover {
 	color: white;
-}
-
-#home {
-	width: 80%;
-	margin: 0 auto;
-  padding: 0;
 }
 
 @media (max-width: 1000px) {
@@ -310,36 +307,35 @@ label {
 
 /*Footer*/
 
-.footer {
-	width: 80%;
-	position: absolute;
-	bottom: 0;
-	padding-top: 150px;
-	padding-bottom: 10px;
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -42px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+	padding-top: 50px;
+  height: 42px; 
 }
 
 #copyright {
-	text-align: left;
-	padding: 5px;
+	text-align: center;
 }
 
 #facebook {
 	text-align: center;
-	padding: 5px;
 }
 
 #twitter {
 	text-align: right;
-	padding: 5px;
 }
 
 @media (max-width: 1000px) {
-	.footer {
-		padding-top: 50px;
-	}
-
-	#copyright,
-	#twitter {
+	#copyright {
 		text-align: center;
 	}
 }
