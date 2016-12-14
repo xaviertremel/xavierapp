@@ -10,7 +10,7 @@ html {
 }
 
 body {
-	background: url("../img/free-stock-photos-002.jpg");
+	background: url("/assets/free-stock-photos-002.jpg");
 	background-size: auto;
 	position: relative;
 	height: 100%;
@@ -116,9 +116,9 @@ body {
 }
 
 @media (max-width: 767px) {
-	#content {
+	.content-container {
 		width: 85%;
-  	padding-top: 0px;
+  	margin-top: 10px;
 	}	
 }
 
