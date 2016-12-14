@@ -47,7 +47,7 @@ group :development do
 end
 
 group :production do
-	# To communicate with PostgreSQL on the production environment
+	#To communicate with PostgreSQL on the production environment
   gem 'pg'
 end
 
