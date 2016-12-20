@@ -215,35 +215,24 @@ body {
 	}
 }
 
-/*Projects**/
+/*Products**/
 
-#projects {
-  background-image: url("../img/free-stock-photos-0022.jpg");
-	background-attachment: relative;
-	background-repeat: no-repeat;
+.container-flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
-.work-img {
-  display: block; /* needed to center the element with margin */
-  margin: auto; /* center the image inside the column if it's smaller */
-  max-width: 200px; /* needs to be set to the width of your image files if they are relatively small */
-  position: relative; /* is needed for .info position: absolute to work */
+.container-product {
+	display: flex;
+	flex-direction: bottom;
+	flex-wrap: wrap;
+	max-width: 250px;
+	margin: 10px;
 }
 
-.info {
-	display: none;
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  color:#fff;
-  text-transform:uppercase;
-  font-weight:700;
-  letter-spacing:0.5em;
-  line-height:1.6;
-}
-
-.proj-title {
-  font-weight:100;
+.item {
+	padding: 2px;
 }
 
 /*About me*/
