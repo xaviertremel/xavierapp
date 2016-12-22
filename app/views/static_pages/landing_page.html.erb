@@ -1,17 +1,59 @@
 <div class="container page-wrap">    
   <div class="content-container">
     <p id="notice"><%= notice %></p>
-    <div class="row">
       <div class="header">  
-				<h2>Featured Product:</h2>
+				<h2>Featured Products:</h2>
 			</div>
-		<div class="row">
-			<div class="header">  
-				<h3><%= @featured_product.name %></h3>
-			</div>
-		</div>
-		<div class="row" style="text-align:center">
-				<img src=<%= @featured_product.image_url %>/>
-		</div>
+
+		<div class="carousel-container carousel-landing-page">
+        <!-- Carousel -->
+  	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+        <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+      <% @products.each do |product| %>
+
+      <% if product == @featured_product %>
+
+        <div class="item active">
+          <%= image_tag(product.image_url.gsub(/.jpg/,"-carousel.jpg")) %>
+          <div class="carousel-caption">
+            <h3><%= product.name %></h3>
+            <p><%= link_to 'Show', product %></p>
+          </div>
+        </div>
+       
+       <% else %>
+
+       <div class="item">
+          <%= image_tag(product.image_url.gsub(/.jpg/,"-carousel.jpg")) %>
+          <div class="carousel-caption">
+            <h3><%= product.name %></h3>
+            <p><%= link_to 'Show', product %></p>
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+
+      </div><!-- / Carousel -->
+	
 	</div>
 </div>

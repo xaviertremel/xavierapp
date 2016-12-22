@@ -6,26 +6,9 @@
         <h1>Products</h1>
       </div>
        <div class="container-flex">
-          <% @products.each do |product| %>
-          <div class="item container-product">
-            <div class="item">
-              <img src=<%= product.image_url %> class="img-responsive img-rounded" style="min-width:230px"></img>
-              <br>
-            </div>
-            <div class="item" style="font-size:20px;justify-content:center">
-              <%= product.name %><br><br>
-            </div>
-            <div class="item">
-              <%= product.description %><br><br>
-            </div>
-            <div class="item">
-              Colour:&nbsp;<%= product.colour %><br><br>
-              <%= link_to 'Show', product %>
-              <%= link_to 'Edit', edit_product_path(product) %>
-              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </div>
-          <% end %>
+
+        <%= render @products %>
+
         </div>
       </div>
   </div>
