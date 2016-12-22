@@ -1,0 +1,17 @@
+<div class="container page-wrap">    
+  <div class="content-container">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="header">  
+				<h2>Featured Product:</h2>
+			</div>
+		<div class="row">
+			<div class="header">  
+				<h3><%= @featured_product.name %></h3>
+			</div>
+		</div>
+		<div class="row" style="text-align:center">
+				<img src=<%= @featured_product.image_url %>/>
+		</div>
+	</div>
+</div>
