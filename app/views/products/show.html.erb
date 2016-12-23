@@ -22,7 +22,7 @@
               <tr class="row">
                 <td class="col-md-4"><%= @product.description %></td>
                 <td class="col-md-4"><%= @product.colour %></td>
-                <td class="col-md-4"><img src=<%= @product.image_url %> class="img-responsive img-rounded"/></td>
+                <td class="col-md-4"><%= image_tag(@product.image_url, :class => "img-responsive img-rounded", :style => 'min-width:230px') %></td>
               </tr>
           </tbody>
         </table>
