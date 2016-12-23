@@ -10,7 +10,6 @@ html {
 }
 
 body {
-	/*background: url("/assets/geometry2.png");*/
 	background-size: auto;
 	position: relative;
 	height: 100%;
@@ -99,7 +98,6 @@ body {
 /*Main CSS*/
 
 .container {
-	background: url("../img/free-stock-photos-002.jpg");
 	width: 80%;
 	background-size: cover;
   margin-top: 0px;

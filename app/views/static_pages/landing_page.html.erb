@@ -11,9 +11,7 @@
         <!-- Indicators -->
       <ol class="carousel-indicators">
 
-        <% i = 1 %>
-
-        <% @products.each do |product| %>
+        <% @products.each_with_index do |product, index| %>
 
         <% if product == @featured_product %>        
 
@@ -21,10 +19,7 @@
 
         <% else %>
 
-
-        <li data-target="#carousel-example-generic" data-slide-to="<%= i %>"></li>
-        
-        <% i + 1 %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%= index %>"></li>
 
         <% end %>
         <% end %>
