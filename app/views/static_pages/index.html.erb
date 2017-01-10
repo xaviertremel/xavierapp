@@ -16,7 +16,7 @@
           <%= image_tag("jobk8kq2npw-adrian-flores-carousel.jpg") %>
           <div class="carousel-caption">
             <h3>What we offer</h3>
-            <p><a href="\products">Have a look at our bikes</a></p>
+            <p><%= link_to 'Have a look at our bikes', products_path %></p>
           </div>
         </div>
 
@@ -24,7 +24,7 @@
           <%= image_tag("j-0pjgxe1kc-alexey-lin-carousel.jpg") %>
           <div class="carousel-caption">
             <h3 style="color:black">Our story</h3>
-            <p><a href="\static_pages/about.html" style="color:black">Learn more about us</a></p>
+            <p><%= link_to 'Learn more about us', static_pages_about_path, id: "about_link" %></p>
           </div>
         </div>
 
@@ -32,7 +32,7 @@
           <%= image_tag("wolwsgrh3xi-linda-xu.jpg") %>
           <div class="carousel-caption">
             <h3>Get in touch</h3>
-            <p><a href="\static_pages/contact.html">How to contact us</a></p>
+            <p><%= link_to 'How to contact us', static_pages_contact_path %></p>
           </div>
         </div>
       
@@ -55,7 +55,8 @@
           <div class="col-md-4 col-xs-12" style="text-align:center">
             <h2>Bikes</h2>
             <p>Have a look at our bikes</p>
-            <p><a class="btn btn-default btn-mobile" href="\products" role="button" data-toggle="tooltip" data-placement="right" title="What we sell">Discover &raquo;</a></p>
+            <p><%= link_to('Discover', products_path, {:class => 'btn btn-default btn-mobile'})%>
+              <a class="btn btn-default btn-mobile" href="\products" role="button" data-toggle="tooltip" data-placement="right" title="What we sell">Discover &raquo;</a></p>
           </div>
           <div class="col-md-4 col-xs-12">
             <h2>About us</h2>
