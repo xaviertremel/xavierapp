@@ -37,15 +37,15 @@ body {
   color: black;
   background-color: white;
   text-decoration: none;
-  -webkit-transition: color 1s;
-  -webkit-transition: background-color 1s;
+  -webkit-transition: color 3s;
+  -webkit-transition: background-color 2s;
 }
 
- .navbar-default .navbar-nav > .active > a {
+ .navbar-default .navbar-nav li a:active {
   color: black;
   background-color: white;
   text-decoration: none;
-  -webkit-transition: color 1s;
+  -webkit-transition: color 2s;
   -webkit-transition: background-color 1s;
 }
 
@@ -57,6 +57,8 @@ body {
 .navbar-default .navbar-brand:hover {
   color: black;
   background-color: white;
+  -webkit-transition: color 2s;
+  -webkit-transition: background-color 1s;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -66,6 +68,14 @@ body {
 .navbar-default .navbar-toggle {
   border: none;
   background-color: white;
+}
+
+.search-field {
+	max-width: 200px;
+}
+
+.navbar-form {
+	margin-right: 2px;
 }
 
 /*Main CSS*/
@@ -97,6 +107,11 @@ body {
 	background-color: #434649;
 	border: 0;
 	color: white;
+}
+
+.btn:hover {
+	-webkit-transition: color 2s;
+  -webkit-transition: background-color 1s;
 }
 
 .tooltip {
@@ -221,6 +236,19 @@ body {
 	padding: 2px;
 }
 
+/*Forms*/
+
+.input-group-addon {
+	width: 150px;
+}
+
+.form-control {
+	min-width: 300px;
+}
+
+.actions {
+	float: left;
+}
 /*Footer*/
 
 .page-wrap {

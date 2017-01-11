@@ -11,27 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <h3 style="float:left">Insert a new product:</h3>
+
+  </br>
+  </br>
+  </br>
+
+  <div class="input-group">
+    <%= f.label(:name, "Name:", class: "input-group-addon") %>
+    <%= f.text_field(:name, class: "form-control") %>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  </br>
+
+  <div class="input-group">
+    <%= f.label(:description, "Description:", class: "input-group-addon") %>
+    <%= f.text_area(:description, class: "form-control") %>
   </div>
 
-  <div class="field">
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
+  </br>
+
+  <div class="input-group">
+    <%= f.label(:image_url, "Image URL:", class: "input-group-addon") %>
+    <%= f.text_field(:image_url, class: "form-control") %>
   </div>
 
-  <div class="field">
-    <%= f.label :colour %><br>
-    <%= f.text_field :colour %>
+  </br>
+
+  <div class="input-group">
+    <%= f.label(:colour, "Colour:", class: "input-group-addon") %>
+    <%= f.text_field(:colour, class: "form-control") %>
   </div>
+
+  </br>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit("Submit", class: "btn btn-default") %>
   </div>
+
+  </br>
+  </br>
+
 <% end %>
