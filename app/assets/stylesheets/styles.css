@@ -242,12 +242,26 @@ body {
 	width: 150px;
 }
 
+.control-label {
+	max-width: 200px;
+}
+
 .form-control {
 	min-width: 300px;
+	max-width: 300px;
 }
 
 .actions {
 	float: left;
+}
+
+.links {
+	margin-right: 14px;
+	float: right;
+}
+
+.signform {
+	max-width: 800px;
 }
 /*Footer*/
 

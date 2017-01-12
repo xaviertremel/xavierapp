@@ -15,29 +15,6 @@
   </head>
 
   <body>
-<!--
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="\static_pages/index.html">Home</a></li>
-            <li><a href="\products">Bikes</a></li>
-            <li><a href="\static_pages/about.html">About</a></li>
-            <li><a href="\static_pages/contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  -->
 
      <!-- Static navbar -->
     <nav class="navbar navbar-default navbar-static-top">
@@ -59,6 +36,15 @@
             <li id="nav-link"><%= link_to 'Contact', static_pages_contact_path %></li>
             <li id="nav-link"><a href="https://xavierblog.herokuapp.com/">Blog</a></li>
           </ul>
+          <ul class="nav navbar-nav navlogin">
+            <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path) %>
+            <% end %>
+            </li>
+          </ul>
           <%= form_tag("/products", class: "navbar-form navbar-right", role: "search", method: "get") do %>
             <div class="form-group">
              <%= label_tag(:q, "", class: "search-bar-label") %>
@@ -70,6 +56,12 @@
       </div>
     </nav>
 
+    <% if user_signed_in? %>
+    <p>You are logged in as: <%= @current_user %> </p>
+    <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
