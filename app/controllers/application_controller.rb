@@ -4,8 +4,12 @@ class ApplicationController < ActionController::Base
 
   def logged_user
   	if user_signed_in?
-  		@current_user = current_user.email
+  		@current_user_email = current_user.email
   	end
   end
+
+ 	rescue_from CanCan::AccessDenied do |exception|
+ 	 redirect_to main_app.root_url, :alert => exception.message
+	end
 
 end

@@ -298,6 +298,18 @@ body {
 	}
 }
 
+/*Notices & Alerts*/
+
+.alert {
+	margin: 10px;
+	border: none;
+}
+
+.alert-info {
+	background-color: #434649;
+	color: white;
+}
+
 /*Typography*/
 
 body {
