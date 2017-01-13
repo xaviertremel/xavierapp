@@ -335,3 +335,8 @@ p,
 li {
 	font-family: 'Muli', Arial, sans-serif;
 }
+
+hr {
+	background-color: #434649;
+	height: 1px;
+}
