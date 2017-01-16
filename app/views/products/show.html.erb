@@ -43,11 +43,16 @@
           <h4>Customer reviews:</h4>
         </div>
 
-        <%= render "comments" %>
+        <div class="product-reviews">
 
-        <%= render "called_new_comment" %>
+          <%= render @comments %>
+          <%= will_paginate @comments %>
+
+        </div>
 
         <% end %>
+
+        <%= render "called_new_comment" %>
 
       </div>
 
