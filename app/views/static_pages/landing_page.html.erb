@@ -64,6 +64,37 @@
         </div>
 
       </div><!-- / Carousel -->
+
+       <div class="container-fluid">
+        <div class="row" style="text-align:center">
+          <div class="col-md-4 col-xs-12" style="text-align:center">
+            <h2>Bikes</h2>
+            <p>Have a look at our bikes</p>
+            <p><%= link_to(raw("Discover &raquo;"), products_path, class: 'btn btn-default btn-mobile')%>
+              </p>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            <h2>About us</h2>
+            <p>We are a professional bike shop located in Berlin Friedrichshain</p>
+            <p><%= link_to(raw("Learn more about us &raquo;"), static_pages_about_path, class: 'btn btn-default btn-mobile')%></p>
+         </div>
+          <div class="col-md-4 col-xs-12">
+            <h2>Contact</h2>
+            <p>Feel free to contact us for more information.</p>
+            <p><%= link_to(raw("Contact us &raquo;"), static_pages_contact_path, class: 'btn btn-default btn-mobile')%></p>
+          </div>
+        </div>
+        <div class="row btn-desktop" style="text-align:center">
+          <div class="col-md-4 col-xs-12">
+            <p><%= link_to(raw("Discover &raquo;"), products_path, class: 'btn btn-default')%></p>
+          </div>
+          <div class="col-md-4 col-xs-12">
+              <p><%= link_to(raw("Learn more about us &raquo;"), static_pages_about_path, class: 'btn btn-default')%></p>
+          </div>
+          <div class="col-md-4 col-xs-12">
+            <p><%= link_to(raw("Contact us &raquo;"), static_pages_contact_path, class: 'btn btn-default')%></p>
+          </div>
+        </div>     
 	
 	</div>
 </div>
