@@ -14,4 +14,11 @@
       </p>
     <% end %>
   </div>
+<% else %>
+
+<div class="col-md-6">
+  <p>Please <%= link_to "sign in", new_user_session_path %> to leave a comment on this product</p>
+
+</div>
+
 <% end %>

@@ -10,7 +10,13 @@
         <%= render @products %>
 
         </div>
+        
+        <%= will_paginate @products %>
+
       </div>
+
+      <% if user_signed_in? %>
       <%= link_to 'Create a new product', new_product_path %>
+      <% end %>
   </div>
 </div>
