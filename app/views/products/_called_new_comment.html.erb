@@ -1,4 +1,4 @@
-<% if signed_in? %>
+<% if user_signed_in? %>
   <div class="col-md-6">
     <h4>Add a review:</h4>
     <%= form_for([@product, @product.comments.build]) do |f| %>

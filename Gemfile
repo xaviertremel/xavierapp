@@ -44,6 +44,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database on development and test environment
   gem 'sqlite3'
+  # RSpec
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
