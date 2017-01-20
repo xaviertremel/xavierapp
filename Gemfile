@@ -48,6 +48,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   # rails controller testing
   gem 'rails-controller-testing'
+  # FactoryGirl
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 group :development do

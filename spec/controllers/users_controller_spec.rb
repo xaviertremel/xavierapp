@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe UsersController, :type => :controller do
 
-  let(:user) { User.create!(email: 'xav84@hotmail.com', password: 'hotmail') }
-  let(:user2) { User.create!(email: 'xav84@hotmail.fr', password: 'hotmail') }
+  let(:user) { FactoryGirl.create(:user) }
+  let(:user2) { FactoryGirl.create(:user) }
 
   describe "GET #show" do
 
@@ -23,9 +23,9 @@ describe UsersController, :type => :controller do
         expect(response).to redirect_to(root_path)
       end
 
-      it 'cannot show user2 details and gets a 401 error' do
+      it 'cannot show user2 details and gets a 302 status' do
         get :show, id: user2.id
-        expect(response).to have_http_status(401)
+        expect(response).to have_http_status(302)
       end
     end
 
