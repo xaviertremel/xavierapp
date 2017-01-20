@@ -15,7 +15,10 @@
               Colour:&nbsp;<%= product.colour %><br><br>
             </div>
             <div class="item">
-              Price:&nbsp;<%= product.price %>€<br><br>
+              <% unless product.price.nil? || product.price == 0 %>
+              Price:&nbsp;
+              <%= product.price.to_f/100 %>€<br><br>
+              <% end %>
             </div>
 
             <div class="item">
