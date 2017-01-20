@@ -45,6 +45,13 @@
 
   </br>
 
+  <div class="input-group">
+    <%= f.label(:price, "Price:", class: "input-group-addon") %>
+    <%= f.number_field(:price, class: "form-control") %>
+  </div>
+
+  </br>
+
   <div class="actions">
     <%= f.submit("Submit", class: "btn btn-default") %>
   </div>
