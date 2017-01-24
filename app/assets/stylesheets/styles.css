@@ -70,12 +70,16 @@ body {
   background-color: white;
 }
 
-.search-field {
-	max-width: 200px;
-}
-
 .navbar-form {
 	margin-right: 2px;
+}
+
+.navbar-form .navbar-right {
+	max-width: 100px;
+}
+
+.navbar-form .navbar-right > .form-control {
+	max-width: 100px;
 }
 
 /*Main CSS*/
@@ -225,28 +229,56 @@ body {
 }
 
 .container-product {
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 4px;
 	display: flex;
 	flex-direction: bottom;
 	flex-wrap: wrap;
-	max-width: 250px;
+	width: 250px;
 	margin: 10px;
 }
 
-.item {
-	padding: 2px;
+.container-product > .item {
+	width: 250px;
+	padding: 4px;
 }
 
 /*Forms*/
 
+
+
+.input-group {
+	width: 600px;
+}
+
+.field_with_errors {
+	display: inline-block;
+	border: 1px solid red;
+	border-radius: 4px;
+}
+
 .input-group-addon {
 	width: 150px;
+	padding: 9px;
 }
 
 .control-label {
 	max-width: 200px;
 }
 
-.form-control {
+.input-group > .form-control {
+	min-width: 300px;
+	max-width: 300px;
+}
+
+.field_with_errors > .form-control {
+	min-width: 300px;
+	max-width: 300px;
+}
+
+.form-control-message {
 	min-width: 300px;
 	max-width: 300px;
 }
@@ -261,8 +293,14 @@ body {
 }
 
 .signform {
-	max-width: 800px;
+	max-width: 600px;
 }
+
+#error_explanation > h2 {
+	margin-left: 14px;
+	font-size: 15px;
+}
+
 /*Footer*/
 
 .page-wrap {

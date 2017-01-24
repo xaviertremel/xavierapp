@@ -4,14 +4,9 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if params[:q]
-      search_term = params[:q]
-      if Rails.env.development?
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
-      else
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-      end
+      @products = Product.search(params[:q]).paginate(:page => params[:page], :per_page => 4)
     else
-      @products = Product.all.paginate(:page => params[:page], :per_page => 2)
+      @products = Product.all.paginate(:page => params[:page], :per_page => 4)
     end
   end
 
@@ -78,6 +73,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :colour)
+      params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
 end

@@ -14,4 +14,13 @@ class Product < ApplicationRecord
   def average_rating
     comments.average(:rating).to_f
   end
+
+  def self.search(search_term)
+  	if Rails.env.development?
+      where("name LIKE ?", "%#{search_term}%")
+    else
+      where("name ilike ?", "%#{search_term}%")
+    end
+  end
+
 end

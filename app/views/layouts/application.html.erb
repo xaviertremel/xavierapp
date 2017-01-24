@@ -39,7 +39,7 @@
           <ul class="nav navbar-nav navlogin">
             <li>
             <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+              <%= link_to('Logout: '+@current_user_email, destroy_user_session_path, :method => :delete) %>
             <% else %>
               <%= link_to('Login', new_user_session_path) %>
             <% end %>
@@ -55,10 +55,6 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <% if user_signed_in? %>
-    <p >You are logged in as: <%= @current_user_email %> </p>
-    <% end %>
 
     <% if notice %>
     <p id="notice" class="alert alert-info"><%= notice %></p>

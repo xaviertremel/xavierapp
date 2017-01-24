@@ -1,7 +1,8 @@
-<%= form_for(product) do |f| %>
+
+<div class="row">
   <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <div id="alert" class="alert alert-danger">
+      <h4><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h4>
 
       <ul>
       <% product.errors.full_messages.each do |message| %>
@@ -10,12 +11,11 @@
       </ul>
     </div>
   <% end %>
+</div>
 
-  <h3 style="float:left">Insert a new product:</h3>
+<div class="row">
 
-  </br>
-  </br>
-  </br>
+<%= form_for(product) do |f| %>
 
   <div class="input-group">
     <%= f.label(:name, "Name:", class: "input-group-addon") %>
@@ -60,3 +60,5 @@
   </br>
 
 <% end %>
+
+</div>

@@ -5,14 +5,14 @@
               <%= link_to(image_tag(product.image_url, :class => "img-responsive img-rounded", :style => 'min-width:230px'), product) %>
               <br>
             </div>
-            <div class="item" style="font-size:20px;justify-content:center">
-              <%= link_to(product.name, product) %><br><br>
+            <div class="item" style="font-size:20px;text-align:center">
+              <%= link_to(product.name, product, style: "text-align:center") %><br><br>
             </div>
             <div class="item">
               <%= product.description %><br><br>
             </div>
             <div class="item">
-              Colour:&nbsp;<%= product.colour %><br><br>
+              Colour:&nbsp;<%= product.colour %><br/><br>
             </div>
             <div class="item">
               <% unless product.price.nil? || product.price == 0 %>

@@ -1,3 +1,14 @@
+// control the screen sizes
+$screen-xs-min: 300px;
+$screen-sm-min: 400px;
+$screen-md-min: 800px;
+$screen-lg-min: 1200px;
+
+// this tells which screen size to use to start breaking on
+// will tell navbar when to collapse
+$grid-float-breakpoint: $screen-lg-min;
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -5,6 +16,4 @@ body {
 	background-image: url(image-path("geometry2.png"));
 }
 
-.container-product {
-	background-image: url(image-path("sayagata-400px.png"));
-}
+

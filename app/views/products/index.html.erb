@@ -7,6 +7,7 @@
       </div>
        <div class="container-flex">
 
+
         <%= render @products %>
 
         </div>
@@ -14,6 +15,14 @@
         <%= will_paginate @products %>
 
       </div>
+
+      <% if @products.empty? %>
+
+      <h4>No Products found...</h4>
+      <br/>
+      <br/>
+
+      <% end %>
 
       <% if user_signed_in? %>
       <%= link_to 'Create a new product', new_product_path %>
