@@ -1,35 +1,37 @@
-         
+<% cache product do%>         
 
-          <div class="item container-product">
-            <div class="item">
-              <%= link_to(image_tag(product.image_url, :class => "img-responsive img-rounded", :style => 'min-width:230px'), product) %>
-              <br>
-            </div>
-            <div class="item" style="font-size:20px;text-align:center">
-              <%= link_to(product.name, product, style: "text-align:center") %><br><br>
-            </div>
-            <div class="item">
-              <%= product.description %><br><br>
-            </div>
-            <div class="item">
-              Colour:&nbsp;<%= product.colour %><br/><br>
-            </div>
-            <div class="item">
-              <% unless product.price.nil? || product.price == 0 %>
-              Price:&nbsp;
-              <%= product.price.to_f/100 %>€<br><br>
-              <% end %>
-            </div>
+<div class="item container-product">
+  <div class="item">
+    <%= link_to(image_tag(product.image_url, :class => "img-responsive img-rounded", :style => 'min-width:230px'), product) %>
+    <br>
+  </div>
+  <div class="item" style="font-size:20px;text-align:center">
+    <%= link_to(product.name, product, style: "text-align:center") %><br><br>
+  </div>
+  <div class="item">
+    <%= product.description %><br><br>
+  </div>
+  <div class="item">
+    Colour:&nbsp;<%= product.colour %><br/><br>
+  </div>
+  <div class="item">
+    <% unless product.price.nil? || product.price == 0 %>
+    Price:&nbsp;
+    <%= product.price.to_f/100 %>€<br><br>
+    <% end %>
+  </div>
 
-            <div class="item">
+  <div class="item">
 
-              <% if user_signed_in? %>
+    <% if user_signed_in? %>
 
-              <%= link_to 'Show', product_path(product) %>
-              <%= link_to 'Edit', edit_product_path(product) %>
-              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Show', product_path(product) %>
+    <%= link_to 'Edit', edit_product_path(product) %>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-              <% end %>
+    <% end %>
 
-            </div>
-          </div>
+  </div>
+</div>
+
+<% end %>
