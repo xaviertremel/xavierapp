@@ -31,12 +31,13 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
     can :manage, User, id: user.id
+
     if user.admin?
         can :destroy, :all
     else
         cannot :destroy, :all
-    end
-
+        can :destroy, Comment, user_id: user.id
+    end    
   end
   
 end

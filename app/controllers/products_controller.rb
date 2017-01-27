@@ -8,12 +8,19 @@ class ProductsController < ApplicationController
     else
       @products = Product.all.paginate(:page => params[:page], :per_page => 4)
     end
+    if redis.get("products").nil?
+      redis.set("products",0)
+      @products.each do
+        redis.incr("products")
+      end
+    end
+    @products_in_stock = redis.get("products")
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 2)
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 4)
   end
 
   # GET /products/new
@@ -75,4 +82,9 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :colour, :price)
     end
+
+    def redis
+      $redis
+    end
+
 end
