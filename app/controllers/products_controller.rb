@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
       @products = Product.all.paginate(:page => params[:page], :per_page => 4)
     end
     if redis.get("products").nil?
-      redis.set("products",0)
+      redis.set("products",1)
       @products.each do
         redis.incr("products")
       end
