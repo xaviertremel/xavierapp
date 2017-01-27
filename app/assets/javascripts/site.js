@@ -12,7 +12,11 @@ var refreshRating = function() {
 
 $(document).on('turbolinks:load', function(){
 
-		//Raty
+	//Notices & Alerts fadeOut
+    $("#notice").fadeToggle(3000);
+    $("#alert").fadeToggle(3000);
+
+    //Raty
     refreshRating();
 
     //elevateZoom

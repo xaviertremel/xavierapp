@@ -343,6 +343,10 @@ body {
 .alert {
 	margin: 10px;
 	border: none;
+	width: 350px;
+	z-index: 101;
+	overflow: hidden;
+	position: absolute;
 }
 
 .alert-info {
