@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @email = current_user.email
+    @product_id = params[:product_id]
+    UserMailer.order_confirmation(@email, @product_id).deliver_now
   end
 
   def destroy

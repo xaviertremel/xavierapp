@@ -8,4 +8,12 @@ class UserMailer < ApplicationMailer
         :to => 'xavier@adkicker.io',
         :subject => "A new contact form message from #{name}")
   end
+
+  def order_confirmation(email, product_id)
+  	@product_id = product_id
+  	@email = email
+    	mail(:from => 'xavier@adkicker.io',
+      	  :to => email,
+      	  :subject => "Order confirmed: #{product_id}")
+  end
 end
