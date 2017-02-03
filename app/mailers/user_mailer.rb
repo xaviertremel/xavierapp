@@ -1,5 +1,6 @@
 class UserMailer < ApplicationMailer
-	default from: "xavier@adkicker.io"
+	default from: "no_reply@berlinbikeshop.com"
+  layout 'mailer'
 
   def contact_form(email, name, message)
   @message = message
@@ -9,11 +10,14 @@ class UserMailer < ApplicationMailer
         :subject => "A new contact form message from #{name}")
   end
 
-  def order_confirmation(email, product_id)
-  	@product_id = product_id
+  def order_confirmation(email, user_name, product_name, price)
+  	@product_name = product_name
   	@email = email
-    	mail(:from => 'xavier@adkicker.io',
+    @name = user_name
+    @price = price
+    render :file => 'user_mailer/order_confirmation.html.erb', :layout => 'mailer'
+    	mail(:from => 'no_reply@berlinbikeshop.com',
       	  :to => email,
-      	  :subject => "Order confirmed: #{product_id}")
+      	  :subject => "Order confirmed: #{product_name} for #{price}")
   end
 end
