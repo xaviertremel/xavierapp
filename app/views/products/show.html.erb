@@ -49,9 +49,8 @@
 
       <div class="col-md-8">
 
-        <% if !Comment.where("product_id = ?", @product.id).empty? %>
+        <% #if !Comment.where("product_id = ?", @product.id).empty? %>
         <div class="col-md-12">
-          <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
           <h4>Customer reviews:</h4>
         </div>
 
@@ -62,7 +61,7 @@
 
         </div>
 
-        <% end %>
+        <% # end %>
 
         <div class="product-new-comment">
 
