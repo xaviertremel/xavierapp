@@ -15,9 +15,9 @@
     Colour:&nbsp;<%= product.colour %><br/><br>
   </div>
   <div class="item">
-    <% unless product.price.nil? || product.price == 0 %>
+    <% unless product.price_cents.nil? || product.price_cents == 0 %>
     Price:&nbsp;
-    <%= product.price.to_f/100 %>€<br><br>
+    <%= humanized_money product.price %><%= currency_symbol %><br><br>
     <% end %>
   </div>
 

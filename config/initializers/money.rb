@@ -51,7 +51,7 @@ MoneyRails.configure do |config|
   #   :iso_code            => "EU4",
   #   :name                => "Euro with subunit of 4 digits",
   #   :symbol              => "€",
-  #   :symbol_first        => true,
+  #   :symbol_first        => false,
   #   :subunit             => "Subcent",
   #   :subunit_to_unit     => 10000,
   #   :thousands_separator => ".",
@@ -77,12 +77,13 @@ MoneyRails.configure do |config|
   # Default value is nil meaning "ignore this option".
   # Example:
   #
-  # config.default_format = {
-  #   :no_cents_if_whole => nil,
-  #   :symbol => nil,
-  #   :sign_before_symbol => nil
-  # }
+   config.default_format = {
+     :no_cents_if_whole => false,
+     :symbol => nil,
+     :sign_before_symbol => nil
+   }
 
+  config.no_cents_if_whole = false
   # Set default raise_error_on_money_parsing option
   # It will be raise error if assigned different currency
   # The default value is false
