@@ -10,11 +10,12 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
     $("#cable-notice").html(data.comment).fadeIn(1000);
-    $("#cable-notice").html(data.comment).fadeOut(6000);
+    $("#cable-notice").html(data.comment).fadeOut(10000);
+    $("#comment-intro").show();
     $('.product-reviews').prepend(data.comment);
     $("#average-rating").attr('data-score', data.average_rating);
     refreshRating();
-    console.log(data);
+    console.log(data.product);
     }//,
 
   //listen_to_comments: function() {

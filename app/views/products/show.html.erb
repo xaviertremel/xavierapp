@@ -56,7 +56,13 @@
 
         <div class="product-reviews">
 
-          <%= render @comments %>
+          <% @comments.each do |comment| %>
+          <%= render comment %>
+          <div class="col-md-12">
+            <hr>
+          </div>
+          <% end %>
+
           <%= will_paginate @comments %>
 
         </div>

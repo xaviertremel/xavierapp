@@ -13,8 +13,8 @@ var refreshRating = function() {
 $(document).on('turbolinks:load', function(){
 
 	//Notices & Alerts fadeOut
-    $("#notice").fadeToggle(3000);
-    $("#alert").fadeToggle(3000);
+    $("#notice").fadeToggle(6000);
+    $("#alert").fadeToggle(6000);
 
     //Raty
     refreshRating();

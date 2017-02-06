@@ -1,4 +1,6 @@
-
+        <div class="col-md-12" id="comment-intro" style="display:none">
+            <p><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;New review for <%= comment.product.name %></p>
+        </div>
     
         <div class="col-md-12">
             <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
@@ -14,5 +16,4 @@
 
             <p><div class="rated" id="average-rating" data-score="<%= comment.rating %>"></div></p>
             <p><%= comment.body %></p>
-            <hr>
         </div>

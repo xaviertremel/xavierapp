@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @comment.save
-        ActionCable.server.broadcast 'product_channel', comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @comment.product.average_rating
+        ActionCable.server.broadcast 'product_channel', comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @comment.product.average_rating, product: @comment.product 
         #ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating
         #ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
         #ProductChannel.broadcast_to @product.id, comment: CommentsController.render(partial: 'comments/comment', locals: {comment: @comment, current_user: current_user}), average_rating: @product.average_rating
