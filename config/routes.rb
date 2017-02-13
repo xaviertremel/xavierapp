@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   post 'payments/create'
 
-  root 'static_pages#landing_page'
+  root 'static_pages#index'
 
   mount ActionCable.server => '/cable'
   

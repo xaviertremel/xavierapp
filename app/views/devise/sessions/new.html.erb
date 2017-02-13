@@ -1,7 +1,16 @@
 <div class="signform">
 
-<h2 style="margin-left:14px">Log in</h2>
+<% if URI(request.referer).path.include? '/products' %>
+
+  <h2 style="margin-left:14px">Please log in to buy</h2>
 </br>
+
+<% else %>
+
+  <h2 style="margin-left:14px">Log in</h2>
+</br>
+
+<% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 

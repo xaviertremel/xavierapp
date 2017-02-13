@@ -14,10 +14,10 @@ class UserMailer < ApplicationMailer
   	@product_name = product_name
   	@email = email
     @name = user_name.titleize
-    @price = price.fractional.to_f/100
+    @price = (price.fractional/100).to_f
     render :file => 'user_mailer/order_confirmation.html.erb', :layout => 'mailer'
     	mail(:from => 'no_reply@berlinbikeshop.com',
       	  :to => email,
-      	  :subject => "Order confirmed: #{product_name} for #{price}€")
+      	  :subject => "Order confirmed: #{product_name} for #{price} €")
   end
 end

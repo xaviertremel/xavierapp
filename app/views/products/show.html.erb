@@ -32,7 +32,9 @@
         <div class="col-md-6">
           <br/>
           <%= form_tag "/payments/create" do %>
+          <%# if current_user %>
           <%= render partial: "shared/stripe_checkout_button" %>
+          <%# end %>
           <% end %>
 
         </div>           

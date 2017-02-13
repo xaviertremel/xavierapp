@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :logged_user
+  before_filter :store_current_location, :unless => :devise_controller?
 
   def logged_user
   	if user_signed_in?
@@ -19,5 +20,11 @@ class ApplicationController < ActionController::Base
  	rescue_from CanCan::AccessDenied do |exception|
  	 redirect_to main_app.root_url, :alert => exception.message
 	end
+
+  private
+
+    def store_current_location
+      store_location_for(:user, request.url)
+    end
 
 end

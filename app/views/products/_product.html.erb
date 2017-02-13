@@ -15,10 +15,8 @@
     Colour:&nbsp;<%= product.colour %><br/><br>
   </div>
   <div class="item">
-    <% unless product.price_cents.nil? || product.price_cents == 0 %>
     Price:&nbsp;
     <%= humanized_money product.price %><%= currency_symbol %><br><br>
-    <% end %>
   </div>
 
   <% end %>
