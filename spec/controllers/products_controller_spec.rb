@@ -1,42 +1,21 @@
 require 'rails_helper'
 
-describe UsersController, :type => :controller do
+describe ProductsController, :type => :controller do
 
+  let(:product) { FactoryGirl.create(:product) }
   let(:user) { FactoryGirl.create(:user) }
-  let(:user2) { FactoryGirl.create(:user) }
+  
 
-  describe "GET #show" do
-
-    context 'User is logged in' do
-      before do
-        sign_in user
-      end
-
-      it 'loads correct user details' do
-        get :show, id: user.id
-        expect(response).to have_http_status(200)
-      end
-
-      it 'cannot show user2 details and redirects to root_path' do
-        get :show, id: user2.id
-        expect(response).not_to have_http_status(200)
-        expect(response).to redirect_to(root_path)
-      end
-
-      it 'cannot show user2 details and gets a 302 status' do
-        get :show, id: user2.id
-        expect(response).to have_http_status(302)
-      end
+  context 'GET #show' do
+    before do
+      get :show, id: product.id
     end
 
-    context 'No User is logged in' do
-      it 'redirects to login' do
-        get :show, id: user.id
-        expect(response).to redirect_to(new_user_session_path)
-        expect(assigns(:user)).to eq user
-      end
+    it 'responds successfully with an HTTP 200 status code' do
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
-
   end
+
 
 end

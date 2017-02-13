@@ -1,28 +1,29 @@
 require 'rails_helper'
 
-describe Comment do
+describe Comment, :type => :model do
 
-  context "when our product has rating" do
-    before do
-      @product = Product.create!(name: "race bike")
-      @user = User.create!(email: "xav84@hotmail.com", password: "hotmail")
-      @product.comments.create!(rating: 1, user: @user, body: "Awful bike!")
-      @product.comments.create!(rating: 3, user: @user, body: "Great!")
-      @product.comments.create!(rating: 5, user: @user, body: "Super!")
-    end
+  let(:user) { FactoryGirl.create(:user) }
+  let(:product) { FactoryGirl.create(:product) }
 
-    it "should return the average of every comments" do
-      expect(@product.average_rating).to eq 3
-    end
+  it "should not validate a comment without a body" do
+    @comment = FactoryGirl.build(:comment, user_id: user.id, product_id: product.id, body: nil)
+    expect(@comment).not_to be_valid
   end
 
-  context "product is not valid" do
-    before do
-      @product = Product.new(description: "Nice Bike")
-    end
-
-    it "should not be valid" do
-      expect(@product).not_to be_valid
-    end
+  it "should not validate a comment without a user" do
+    @comment = FactoryGirl.build(:comment, user_id: nil, product_id: product.id)
+    expect(@comment).not_to be_valid
   end
+
+  it "should not validate a comment without a product" do
+    @comment = FactoryGirl.build(:comment, user_id: user.id, product_id: nil)
+    expect(@comment).not_to be_valid
+  end
+
+  it "should not validate a comment if rating is not an integer" do
+    @comment = FactoryGirl.build(:comment, user_id: user.id, product_id: product.id, rating: 1.3)
+    puts @comment.rating
+    expect(@comment).not_to be_valid
+  end
+
 end
