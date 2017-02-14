@@ -20,4 +20,5 @@ class UserMailer < ApplicationMailer
       	  :to => email,
       	  :subject => "Order confirmed: #{product_name} for #{price} €")
   end
+
 end
