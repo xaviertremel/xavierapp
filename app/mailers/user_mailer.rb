@@ -23,10 +23,10 @@ class UserMailer < ApplicationMailer
 
   def new_user(email)
     @email = email
-    render :file => 'application_mailer/new_user.html.erb', :layout => 'mailer'
+    render :file => 'user_mailer/new_user.html.erb', :layout => 'mailer'
       mail(:from => 'no_reply@berlinbikeshop.com',
           :to => 'xavier@adkicker.io',
           :subject => "New User: #{email}")
   end
-  
+
 end

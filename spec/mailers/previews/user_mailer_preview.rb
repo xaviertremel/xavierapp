@@ -7,4 +7,8 @@ class UserMailerPreview < ActionMailer::Preview
    def order_confirmation
     UserMailer.order_confirmation("email", "user_name", "product_name", Product.first.price)
   end
+
+  def new_user
+    UserMailer.new_user("email")
+  end
 end
