@@ -4,7 +4,7 @@ class ApplicationMailer < ActionMailer::Base
 
   def new_user(email)
     @email = email
-    render :file => 'user_mailer/new_user.html.erb', :layout => 'mailer'
+    render :file => 'application_mailer/new_user.html.erb', :layout => 'mailer'
       mail(:from => 'no_reply@berlinbikeshop.com',
           :to => 'xavier@adkicker.io',
           :subject => "New User: #{email}")
